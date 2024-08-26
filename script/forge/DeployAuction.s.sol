@@ -13,7 +13,12 @@ interface IAuctionFactory {
 }
 
 contract FjordAuctionScript is Script {
-    function run(address auctionFactory, address auctionToken, uint256 biddingTime, uint256 totalTokens) public {
+    function run(
+        address auctionFactory,
+        address auctionToken,
+        uint256 biddingTime,
+        uint256 totalTokens
+    ) public {
         vm.startBroadcast();
         bytes32 salt = keccak256(abi.encodePacked(block.timestamp, msg.sender));
 
